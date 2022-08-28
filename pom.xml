@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <packaging>pom</packaging>
+    <artifactId>groovy-exercises</artifactId>
+    <groupId>com.byoskill</groupId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>4.0.4</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <version>3.0.0</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>compile</phase>
+                        <configuration>
+                            <target>
+                                <mkdir dir="${basedir}/src/main/groovy"/>
+                                <taskdef name="groovyc"
+                                         classname="org.codehaus.groovy.ant.Groovyc">
+                                    <classpath refid="maven.compile.classpath"/>
+                                </taskdef>
+                                <mkdir dir="${project.build.outputDirectory}"/>
+                                <groovyc destdir="${project.build.outputDirectory}"
+                                         srcdir="${basedir}/src/main/groovy/" listfiles="true">
+                                    <classpath refid="maven.compile.classpath"/>
+                                </groovyc>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>test-compile</id>
+                        <phase>test-compile</phase>
+                        <configuration>
+                            <target>
+                                <mkdir dir="${basedir}/src/test/groovy"/>
+                                <taskdef name="groovyc"
+                                         classname="org.codehaus.groovy.ant.Groovyc">
+                                    <classpath refid="maven.test.classpath"/>
+                                </taskdef>
+                                <mkdir dir="${project.build.testOutputDirectory}"/>
+                                <groovyc destdir="${project.build.testOutputDirectory}"
+                                         srcdir="${basedir}/src/test/groovy/" listfiles="true">
+                                    <classpath refid="maven.test.classpath"/>
+                                </groovyc>
+                            </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+    <modules>
+        <module>chapter-groovy-bases/exercise-addupto</module>
+        <module>chapter-groovy-bases/exercise-bank-account</module>
+        <module>chapter-groovy-bases/exercise-basescript</module>
+        <module>chapter-groovy-bases/exercise-capitalize</module>
+        <module>chapter-groovy-bases/exercise-contains-range</module>
+        <module>chapter-groovy-bases/exercise-distance-hamming</module>
+        <module>chapter-groovy-bases/exercise-observer-pattern</module>
+        <module>chapter-groovy-bases/exercise-pyramidgenerator</module>
+        <module>chapter-groovy-bases/exercise-stringjoin</module>
+        
+        <module>chapter-working-with-groovy/exercise-getodd</module>
+        <module>chapter-working-with-groovy/exercise-groovyshell</module>
+        <module>chapter-working-with-groovy/exercise-json-parsing</module>
+        <module>chapter-working-with-groovy/exercise-junit</module>
+        <module>chapter-working-with-groovy/exercise-spock</module>
+        <module>chapter-working-with-groovy/exercise-sql</module>
+        <module>chapter-working-with-groovy/exercise-vowels</module>
+        <module>chapter-working-with-groovy/exercise-countdown</module>
+
+        <module>chapter-groovy-metaprog/exercise-class-metaprog</module>
+        <module>chapter-groovy-metaprog/exercise-expandoMetaClass</module>
+        <module>chapter-groovy-metaprog/exercise-groovyinterceptable</module>
+
+        <module>chapter-groovy-transform/exercise-groovy-annotations</module>
+
+        <module>chapter-presentation/exercise-grape</module>
+
+        
+    </modules>
+</project>
