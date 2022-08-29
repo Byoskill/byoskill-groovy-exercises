@@ -38,6 +38,7 @@ class BankAccountTest {
 
         Assertions.assertEquals 40.0d, account.solde
 
+        Assertions.assertTrue account.check()
     }
 
     @Test

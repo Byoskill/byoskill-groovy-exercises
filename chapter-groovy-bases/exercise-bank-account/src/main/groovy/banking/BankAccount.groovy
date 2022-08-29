@@ -52,4 +52,9 @@ class BankAccount {
         retrait tuple[0] as double, tuple[1] as String
         this
     }
+    
+    boolean check() {
+        double expectedSum = initialAmount + operations.sum { it.volativeValue}
+        expectedSum == solde
+    }
 }

@@ -5,6 +5,13 @@ class Operation {
     OperationType type
     double montant
     
+    def getVolativeValue() {
+        switch(type) {
+            case OperationType.DEPOSIT: return montant
+            case OperationType.WITHDRAW: return -montant
+        }
+    }
+
     def setMontant(double newVal) {
         BankingRules.montantValide newVal
         this.montant = newVal
