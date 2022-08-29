@@ -6,7 +6,12 @@ class Operation {
     double montant
     
     def setMontant(double newVal) {
-        assert newVal > 0
+        BankingRules.montantValide newVal
         this.montant = newVal
+    }
+    
+    def setName(String name) {
+        BankingRules.operationName name
+        this.name = name
     }
 }
