@@ -20,8 +20,7 @@ class Pyramid {
             lines[0] = " ".repeat(colSpace) +CHAR + " ".repeat(colSpace);
             return
         }
-        String line = " ".repeat(colSpace) + CHAR.repeat(nbChars) + " ".repeat(colSpace)
-        lines[level-1] = line
+        lines[level-1] = " ".repeat(colSpace) + CHAR.repeat(nbChars) + " ".repeat(colSpace)
         pyramid(size, level - 1, lines)
     }
 /**
