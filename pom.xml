@@ -158,6 +158,7 @@
         <module>chapter-groovy-metaprog/exercise-class-metaprog</module>
         <module>chapter-groovy-metaprog/exercise-expandoMetaClass</module>
         <module>chapter-groovy-metaprog/exercise-groovyinterceptable</module>
+        <module>chapter-groovy-metaprog/exercise-operator-overload</module>
 
         <module>chapter-groovy-transform/exercise-groovy-annotations</module>
 
