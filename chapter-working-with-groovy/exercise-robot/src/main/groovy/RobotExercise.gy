@@ -1,0 +1,51 @@
+import java.util.concurrent.ThreadLocalRandom
+
+class Robot {
+
+    static Set<String> usedRobotNames = new HashSet<>()
+    static int MAX_NAMES = 26 * 26 * 9 * 9 * 9
+    def static randomChar = { Character.toString(((int) 'A') + ThreadLocalRandom.current().nextInt(26)) }
+    def static randomDigit = { Character.toString(((int) '0') + ThreadLocalRandom.current().nextInt(9))  }
+
+    static def generateRobotName() {
+        if (usedRobotNames.size() == MAX_NAMES) throw new IllegalArgumentException("Tous les noms ont été utilisés")
+        boolean found = false
+        String newName
+        while (!found) {
+            newName = randomChar() + randomChar() + randomDigit() + randomDigit() + randomDigit()
+            found = !usedRobotNames.contains(newName)
+            if ( !found ) {
+                println("Name collision, new iteration required")
+            }
+        }
+        usedRobotNames.add(newName)
+        newName
+    }
+
+    String name = ""
+    boolean enabled = false
+
+    void use() {
+        if (!enabled) {
+            name = generateRobotName()
+            enabled = true
+        }
+    }
+
+    void reset() {
+        this.enabled = false
+        this.name = ""
+    }
+}
+
+
+var robots = (0..10).collect { it -> new Robot() }
+println robots
+println "Before initialization"
+robots.each { robot -> println "Robot  : ${robot.name}" }
+println "Initialization"
+robots.each { robot -> robot.use() }
+println "After initialization"
+robots.each { robot -> println "Robot  : ${robot.name}" }
+
+println "Used names ${Robot.usedRobotNames.size()}"
