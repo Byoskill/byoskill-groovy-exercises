@@ -185,3 +185,13 @@ Voici une page de résumé des IDE disponibles :
 * VSCode avec les extensions Groovy et Code Runner.
 * Eclipse avec le plugin Groovy : [https://github.com/groovy/groovy-eclipse/wiki](lien)
 * IntelliJ IDEA (community ou payante)
+* Groovy IDE : https://groovyide.com/cpi
+* Groovy Web Console : https://groovyconsole.appspot.com/
+* Groovy tutorial online : https://www.tutorialspoint.com/execute_groovy_online.php
+* One Compiler : https://onecompiler.com/groovy
+
+Astuce vous pouvez tester la version du runtime Groovy avec : 
+
+```
+println GroovySystem.version
+```
