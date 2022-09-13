@@ -176,4 +176,12 @@ Il est possible de faire quelque chose de plus simple avec :
 groovy Example.groovy
 ```
 
+## Les IDE
 
+Voici une page de résumé des IDE disponibles :
+
+[https://groovy-lang.org/ides.html](IDE Supportés)
+
+* VSCode avec les extensions Groovy et Code Runner.
+* Eclipse avec le plugin Groovy : [https://github.com/groovy/groovy-eclipse/wiki](lien)
+* IntelliJ IDEA (community ou payante)
