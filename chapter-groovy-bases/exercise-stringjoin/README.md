@@ -1,4 +1,21 @@
-# StringJoin
+---
+type: exercise
+template: document
+slug: exercise-groovy-stringjoin
+image:
+tags:
+- groovy
+- exercise
+---
+
+Concaténation de chaînes de caractères
+====================================
+
+## Abstract
+
+Cet exercice complet vous permettra de vous familiariser avec les chaînes de caractères.
+
+## Contenu
 
 Ecrire un programme comprenant :
 

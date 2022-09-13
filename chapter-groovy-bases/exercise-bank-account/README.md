@@ -11,7 +11,7 @@ tags:
 - kata
 ---
 
-Simluation d'un compte bancaire.
+Simulation d'un compte bancaire.
 ====================================
 
 ## Abstract

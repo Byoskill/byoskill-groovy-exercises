@@ -1,4 +1,21 @@
-# Distance de Hamming
+---
+type: exercise
+template: document
+slug: exercise-groovy-distance-hamming
+image:
+tags:
+- groovy
+- exercise
+---
+
+Distance de Hamming
+====================================
+
+## Abstract
+
+Cet exercice complet vous permet de manipuler différents éléments syntaxiques du langage Groovy.
+
+## Contenu
 
 La distance de Hamming est une notion mathématique, définie par Richard Hamming, et utilisée en informatique, en traitement du signal et dans les télécommunications. 
 
