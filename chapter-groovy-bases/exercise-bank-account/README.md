@@ -1,20 +1,22 @@
 ---
 type: exercise
 template: document
-slug: exercise-bank-account
+slug: exercise-groovy-bankaccount
 image:
 tags:
-- bank account
 - groovy
 - exercise
+- bank account
+- compte bancaire
 - kata
 ---
-Simulation d'un compte bancaire.
+
+Simluation d'un compte bancaire.
 ====================================
 
 ## Abstract
 
-Cet exercice va vous permettre de manipuler les boucles et d'écrire une première closure.
+Cet exercice complet vous permettra de mettre à l'épreuve vos connaisasnces Groovy.
 
 ## Contenu
 
