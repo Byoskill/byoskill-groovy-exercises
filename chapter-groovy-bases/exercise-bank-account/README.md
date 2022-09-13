@@ -1,3 +1,21 @@
+---
+type: exercise
+template: document
+slug: exercise-bank-account
+image:
+tags:
+- bank account
+- groovy
+- exercise
+- kata
+---
+Simulation d'un compte bancaire.
+====================================
+
+## Abstract
+
+Cet exercice va vous permettre de manipuler les boucles et d'écrire une première closure.
+
 ## Simulation Compte Bancaire
 
 Dans cet exercice, nous allons créer un composant qui simule un compte bancaire.
@@ -20,11 +38,11 @@ Un retrait ne peut se faire que s'il y a de l'argent sur le compte.
 
 Un dépot ne peut se faire qu'avec un montant positif.
 
-## Amélioration
+### Amélioration
 
 Ajouter une fonction de contrôle des comptes qui reprend la liste des opérations et vérifie que le montant actuel correspond.
 
-## Amélioration 2
+### Amélioration 2
 
 La banque propose deux types de comptes bancaires.
 
