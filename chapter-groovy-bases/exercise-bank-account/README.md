@@ -16,7 +16,7 @@ Simulation d'un compte bancaire.
 
 Cet exercice va vous permettre de manipuler les boucles et d'écrire une première closure.
 
-## Simulation Compte Bancaire
+## Contenu
 
 Dans cet exercice, nous allons créer un composant qui simule un compte bancaire.
 
