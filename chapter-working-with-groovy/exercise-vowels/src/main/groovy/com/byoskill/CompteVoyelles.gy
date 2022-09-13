@@ -1,0 +1,91 @@
+import java.util.stream.IntStream
+
+// Version Java
+
+def getCountJava(str) {
+    int vowelsCount = 0
+    char[] charArray = str.toCharArray()
+    for (int i = 0; i < charArray.length; i++) {
+        if (charArray[i] == 'a' ||
+                charArray[i] == 'e' ||
+                charArray[i] == 'i' ||
+                charArray[i] == 'o' ||
+                charArray[i] == 'u') {
+            vowelsCount++
+        }
+    }
+
+    return vowelsCount
+}
+
+// Version Groovy
+def getCountGroovy(str) {
+    int vowelsCount = 0
+    str.chars().each {
+        if (it == 'a' ||
+                it == 'e' ||
+                it == 'i' ||
+                it == 'o' ||
+                it == 'u') {
+            vowelsCount++
+        }
+    }
+    vowelsCount
+}
+
+
+// Version Groovy avec closure
+def getCountGroovyClosure(String str) {
+    def isVoyelle = { c ->
+        (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+    }
+    // Simplified writing
+    def chars = str.chars()
+    def listOfCharacters = chars.boxed().toList()
+    listOfCharacters.count { (it == 'a' || it == 'e' || it == 'i' || it == 'o' || it == 'u') }
+}
+
+
+// Version Groovy avec closure + reduce
+def getCountGroovyClosureReduce(String str) {
+    def isVoyelle = { c ->
+        (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+    }
+
+    // Possibility one with reduce
+    def boolToInt = { it ? 1 : 0 }
+    def countVoyelle = boolToInt << isVoyelle
+    str.chars().reduce(0, (prev, c) -> prev + countVoyelle(c))
+}
+
+// Version Groovy avec closure + reduce
+def countMetaClass(String str) {
+
+    Integer.class.metaClass.isVoyelle { ->
+        (delegate == 'a' || delegate == 'e' || delegate == 'i' || delegate == 'o' || delegate == 'u')
+    }
+    str.chars()
+            .map(c -> (c.isVoyelle() ? 1 : 0))
+            .sum()
+}
+
+
+String str = "Ceci est une chaine de caractères"
+resJava = getCountJava str
+resGroovy = getCountGroovy str
+resGroovyClosure = getCountGroovyClosure str
+resGroovyClosureReduce = getCountGroovyClosureReduce str
+resMetaClass = countMetaClass str
+
+
+println "Java version : ${resJava}"
+println "Groovy version : ${resGroovy}"
+println "Groovy with closure version : ${resGroovyClosure}"
+println "Groovy with closure version and reduce : ${resGroovyClosureReduce}"
+println "Groovy resMetaClass : ${resMetaClass}"
+
+
+assert resJava == resGroovy
+assert resJava == resGroovyClosure
+assert resJava == resGroovyClosureReduce
+assert resJava == resMetaClass
