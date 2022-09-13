@@ -170,5 +170,10 @@ export GROOVY_HOME=/home/sleroy/temp/groovy-4.0.5
 java -cp ".:/$GROOVY_HOME/lib/*" Example         
 ```
 
+Il est possible de faire quelque chose de plus simple avec : 
+
+```bash 
+groovy Example.groovy
+```
 
 
