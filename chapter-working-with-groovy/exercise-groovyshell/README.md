@@ -1,10 +1,11 @@
 ---
-type: exercise template: document slug: exercise-robot image:
+type: exercise
+template: document
+slug: exercise-groovyshell
+image:
 tags:
-
 - groovy
 - exercise
-
 ---
 
 Appeler un script Groovy depuis Java
