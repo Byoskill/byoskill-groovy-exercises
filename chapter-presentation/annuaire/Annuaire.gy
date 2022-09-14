@@ -1,0 +1,12 @@
+import groovy.json.JsonSlurper
+
+def annuaireFichier = new File("annuaire.json")
+def json = new JsonSlurper()
+def annuaireData = json.parse(annuaireFichier)
+
+// Grouper les entrées par pays
+
+
+// Grouper les entrées par pays et par ville
+
+// Grouper les entrées par pays et par ville et compter le nombre d'habitants

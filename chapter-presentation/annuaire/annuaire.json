@@ -1,0 +1,28 @@
+[
+  {
+    "name": "Leroy",
+    "country": "CH",
+    "city" : "Lausanne"
+  },
+  {
+    "name": "Bern",
+    "country": "FR",
+    "city" : "Paris"
+  },
+  {
+    "name": "Zimmerman",
+    "country": "FR",
+    "city" : "Strasbourg"
+  },
+  {
+    "name": "Zimmerman",
+    "country": "FR",
+    "city" : "Strasbourg"
+  },
+  {
+    "name": "Marco",
+    "country": "IT",
+    "city" : "Roma"
+  }
+
+]
