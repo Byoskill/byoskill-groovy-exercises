@@ -152,6 +152,7 @@
         <module>chapter-working-with-groovy/exercise-junit</module>
         <module>chapter-working-with-groovy/exercise-spock</module>
         <module>chapter-working-with-groovy/exercise-sql</module>
+        <module>chapter-working-with-groovy/exercise-csvreader</module>
         <module>chapter-working-with-groovy/exercise-vowels</module>
         <module>chapter-working-with-groovy/exercise-countdown</module>
 
