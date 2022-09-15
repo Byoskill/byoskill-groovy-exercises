@@ -2,10 +2,16 @@ import groovy.json.JsonSlurper
 
 def annuaireFichier = new File("annuaire.json")
 def json = new JsonSlurper()
-def annuaireData = json.parse(annuaireFichier)
+List annuaireData = json.parse(annuaireFichier)
 
+var entry = annuaireData.groupBy { it -> it.city }
+//entry.each { it -> println "key ${it.key}\n\t it.value"}
+
+
+
+//entry.each { (key,value) -> println  value }
 // Grouper les entrées par pays
-
+//println annuaireData.groupBy { it -> it.city }.groupBy {it -> it.country}
 
 // Grouper les entrées par pays et par ville
 

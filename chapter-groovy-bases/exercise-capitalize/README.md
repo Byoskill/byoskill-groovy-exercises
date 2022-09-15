@@ -9,9 +9,7 @@ tags:
 Passer en majuscules
 ====================================
 
-## Abstract
-
-Dans cette leçon, nous allons créer un build multi-projet en migrant depuis un projet Maven.
+## Abstra
 
 ## Content
 
