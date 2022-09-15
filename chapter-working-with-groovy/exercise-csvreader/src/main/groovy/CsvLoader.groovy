@@ -1,0 +1,8 @@
+
+class CsvLoader {
+
+    def loadCSV() {
+
+    }
+
+}
