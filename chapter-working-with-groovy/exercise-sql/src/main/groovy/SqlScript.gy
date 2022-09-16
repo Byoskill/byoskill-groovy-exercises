@@ -1,0 +1,66 @@
+import groovy.sql.Sql
+
+import java.sql.Connection
+import java.sql.DriverManager
+
+/**
+ * Database diagram is there : https://github.com/julianhyde/chinook-data-hsqldb
+ * <img src="https://github.com/julianhyde/chinook-data-hsqldb/raw/main/schema.png">
+ */
+@Grapes(
+        @Grab(group = 'org.hsqldb', module = 'hsqldb', version = '2.7.0')
+)
+public class DemoDatabase {
+
+    private static final String url = "jdbc:hsqldb:mem:chinook";
+    Sql sql
+    Connection connection;
+
+    public def initialize() {
+
+        connection = DriverManager.getConnection(url, "sa", "");
+        sql = new Sql(connection);
+        def file = new File("./src/main/resources/chinook.script")
+        sql.withTransaction {->
+            file.eachLine { line, i ->
+                if (!line.startsWith("#")) {
+                    try {
+                        sql.execute(line)
+                    } catch (Exception e) {
+                        println "Ne peut pas ajouter la ligne $i"
+                        e.printStackTrace()
+                    }
+                };
+            }
+        }
+    }
+
+    def stop() {
+        connection.close();
+    }
+
+    def Sql client() { sql }
+
+    def doSql(Closure closure) {
+        closure.call(sql)
+    }
+
+    def doSqlAndClose(Closure closure) {
+        try {
+            closure.call(sql)
+        } finally {
+            stop()
+        }
+    }
+
+
+}
+
+def database = new DemoDatabase()
+database.initialize();
+
+def client = database.client();
+client.eachRow("SELECT * FROM PUBLIC.Album") {
+    println row.title
+}
+
