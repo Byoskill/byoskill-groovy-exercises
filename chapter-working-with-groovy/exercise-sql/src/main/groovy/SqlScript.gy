@@ -8,11 +8,19 @@ import java.sql.DriverManager
  * <img src="https://github.com/julianhyde/chinook-data-hsqldb/raw/main/schema.png">
  */
 @Grapes(
-        @Grab(group = 'org.hsqldb', module = 'hsqldb', version = '2.7.0')
+        [@Grab(group = 'org.hsqldb', module = 'hsqldb', version = '2.7.0'),
+        @Grab(group='com.h2database', module='h2', version='2.1.214')]
 )
 public class DemoDatabase {
 
-    private static final String url = "jdbc:hsqldb:mem:chinook";
+    //private static final String url = "jdbc:hsqldb:mem:chinook";
+    //private static final String url = "jdbc:hsqldb:file:~/test-fichier.db";
+
+    //private static final String url = "jdbc:hsqldb:file:~/test-fichier.db";
+
+    def url = "jdbc:h2:mem:dcbapp;DATABASE_TO_UPPER=FALSE"
+
+
     Sql sql
     Connection connection;
 
@@ -25,7 +33,7 @@ public class DemoDatabase {
             file.eachLine { line, i ->
                 if (!line.startsWith("#")) {
                     try {
-                        sql.execute(line)
+                        sql.executeUpdate(line)
                     } catch (Exception e) {
                         println "Ne peut pas ajouter la ligne $i"
                         e.printStackTrace()
@@ -33,6 +41,7 @@ public class DemoDatabase {
                 };
             }
         }
+        connection.commit()
     }
 
     def stop() {
@@ -60,7 +69,16 @@ def database = new DemoDatabase()
 database.initialize();
 
 def client = database.client();
-client.eachRow("SELECT * FROM PUBLIC.Album") {
-    println row.title
+
+client.eachRow("SELECT * FROM INFORMATION_SCHEMA.TABLES\n") {
+    println it
 }
+
+
+
+client.eachRow("SELECT * FROM Album") {
+    println it.title
+}
+
+
 
