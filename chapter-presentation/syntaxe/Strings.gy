@@ -1,0 +1,112 @@
+prenom = "Sylvain"
+
+"Je suis une chaine de caractère"
+
+"Mon prénom est ${prenom}"
+
+"""
+Mon 
+Prénom
+est
+Sylvain
+"""
+
+
+"""
+Mon 
+Prénom
+est
+$prenom
+"""
+
+'Mon prénom est $sylvain'
+
+println 'M'.dump()
+
+println "M".dump()
+
+println """M""".dump()
+
+'''
+Mon prénom
+est
+Sylvain
+'''
+
+var s =  /Chaine de caractères $prenom/
+println s
+
+println s << "Test"
+
+println s + " Test"
+
+println s.concat("Chaine de caractères")
+
+println (["Je", "suis", "un", "Panda"].join(' '))
+
+println s
+
+println 'ABCBE' - 'B'
+
+
+/**
+ * Expressions régulières
+ */
+
+def patternStr = "[Ff][Rr][Aa][Nn][Cc][Ee]"
+def patternStr2 = /[Ff][Rr][Aa][Nn][Cc][Ee]\b/
+def pattern = ~patternStr
+
+String test1 = "France";
+String test2 = "Ce pays la FraNce";
+
+assert pattern.matcher(test1).matches()
+assert pattern.asPredicate().test(test1)
+
+def matcher = test1 =~ patternStr
+assert matcher.matches()
+
+def matcher2 = test1 =~ patternStr2
+def matcher3 = test2 =~ patternStr2
+assert matcher2.find()
+assert matcher2.size() == 1
+assert matcher3.find()
+assert matcher3.size() == 1
+println matcher3[0]
+
+String number = "121244"
+// A Matcher is created
+if (number =~ /[0-9]+/) {
+    println "Je suis un chiffre"
+}
+// Without using matcher
+if (number ==~ /[0-9]+/) {
+    println "Je suis un chiffre"
+}
+
+String texte = "Je suis 1 texte qui contient des chiffres comme 40."
+
+var chiffre = (texte =~ /[0-9]+/).findAll()
+println chiffre
+
+// Autres facons d'itérer sur les caractères d'une chaîne de caractères
+texte.each { println it}
+texte.size().times { println texte[it]}
+
+class Test {
+    def method() {
+        "Hello"
+    }
+}
+
+var m = Test.&method
+m(new Test())
+
+
+
+
+
+
+
+
+
