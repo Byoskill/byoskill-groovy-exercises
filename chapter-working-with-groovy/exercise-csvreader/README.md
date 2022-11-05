@@ -40,4 +40,10 @@ Les améliorations de la classe File sont ici : [https://docs.groovy-lang.org/la
 
 Les améliorations de la classe Path sont ici : [https://docs.groovy-lang.org/latest/html/groovy-jdk/java/nio/file/Path.html](Améliorations File)
 
+**Note** : Implémentez ces deux versions en utilisant les notions d'architecture hexagonale ( port et adapter)
 
+### Ajout d'une méthode pour filtrer les films entre deux dates
+
+Il est possible 
+
+### 
