@@ -56,14 +56,6 @@ switch(aGagneAuLoto) {
         break;
 }
 
-switch(aGagneAuLoto) {
-    case true:
-        println "Youpie";
-        break;
-    default:
-        println "Je vais encore dépenser pour rejouer"
-        break;
-}
 
 int chiffreEntre0Et09 = 0;
 

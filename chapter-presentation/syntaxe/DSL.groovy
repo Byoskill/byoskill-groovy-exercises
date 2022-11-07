@@ -8,15 +8,14 @@ class MyDSL {
     ProjectInfo projectInfo = new ProjectInfo();
 
     @ToString(fieldSeparator = ",\n")
-    class ProjectInfo {
+    static class ProjectInfo {
         String name
         String description
     }
 
     @MapConstructor
-    @Constructor
     @ToString(fieldSeparator = ",\n")
-    class Library {
+    static class Library {
         String id
         String size
     }

@@ -8,7 +8,7 @@ def method() {
     c = 10;
 }
 
-// method()
+method()
 
 /**
 class A {
