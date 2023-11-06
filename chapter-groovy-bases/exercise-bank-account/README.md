@@ -46,7 +46,7 @@ Ajouter une fonction de contrôle des comptes qui reprend la liste des opératio
 
 ### Amélioration 2
 
-La banque propose deux types de comptes bancaires.
+La banque propose trois types de comptes bancaires.
 
 **Le compte courant** ne présente aucun frais liés aux opérations de retraits et de dépôts. Il n'est pas possible de retirer si le compte ne possède pas la somme attendue.
 
