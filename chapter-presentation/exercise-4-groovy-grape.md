@@ -16,7 +16,7 @@ Installation de Groovy et utilisation de Grape
 
 Dans cet exercice, nous aborderons l'installation de Groovy et démontrerons l'utilisation de Grape pour la gestion des dépendances.
 
-## Étapes de l'exercice
+## Contenu
 
 ### Étape 1 : Installer Groovy
 
