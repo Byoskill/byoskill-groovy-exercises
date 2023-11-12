@@ -1,3 +1,4 @@
+---
 type: exercise
 template: document
 slug: exercice-1-installation-groovy-grape
