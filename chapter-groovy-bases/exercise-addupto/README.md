@@ -12,7 +12,7 @@ Compter jusqu'à
 
 ## Abstract
 
-Cet exercice va vous permettre de manipuler les boucles et d'écrire une première closure.
+Cet exercice va vous permettre de manipuler les boucles en Groovy et d'écrire une première closure.
 
 ## Contenu
 
