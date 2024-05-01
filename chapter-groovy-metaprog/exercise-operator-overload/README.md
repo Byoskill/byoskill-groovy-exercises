@@ -1,5 +1,7 @@
 # Apprentissage de la surcharge d'opérateurs en Groovy
 
+Dans ce cours, nous allons apprendre à surcharger les opérateurs en Groovy.
+
 ## Abstract
 
 Nous allons réaliser plusieurs exercices pour apprendre comment surcharger les opérateurs en Groovy pour simplifier l'écriture de certaines classes.
