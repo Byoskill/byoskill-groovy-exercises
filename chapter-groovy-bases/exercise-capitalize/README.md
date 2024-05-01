@@ -9,7 +9,7 @@ tags:
 Passer en majuscules
 ====================================
 
-## Abstra
+## Abstract
 
 ## Content
 
