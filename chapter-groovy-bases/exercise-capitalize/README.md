@@ -11,6 +11,8 @@ Passer en majuscules
 
 ## Abstract
 
+Cet exercise propose de manipuler des chaines de caractères en Groovy
+
 ## Content
 
 Etant donné une chaine de caractères, implémentez une fonction qui capitalise chaque première lettre des mots de la phrase.
