@@ -1,7 +1,7 @@
 ---
 type: exercise
 template: document
-slug: exercise-groovy-vowels
+slug: exercise-groovy-sql
 image:
 tags:
 - groovy
